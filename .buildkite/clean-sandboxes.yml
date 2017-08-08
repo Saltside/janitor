@@ -1,5 +1,21 @@
 tasks:
-  - name: 'Stop sandboxes'
+  - name: 'Stop ap-south-1 sandboxes'
     command: bin/stop-sandboxes
     agents:
       queue: 'elastic'
+    env:
+      AWS_DEFAULT_REGION: ap-south-1
+
+  - name: 'Stop eu-west-1 sandboxes'
+    command: bin/stop-sandboxes
+    agents:
+      queue: 'elastic'
+    env:
+      AWS_DEFAULT_REGION: eu-west-1
+
+  - name: 'Stop ap-southeast-1 sandboxes'
+    command: bin/stop-sandboxes
+    agents:
+      queue: 'elastic'
+    env:
+      AWS_DEFAULT_REGION: ap-southeast-1
