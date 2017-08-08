@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+main() {
+	aws ec2 describe-instances --filter "Name=tag:Application,Values=sandbox" \
+		| jq -re '.Reservations[].Instances[].InstanceId' \
+		| xargs -t aws ec2 stop-instances --instance-ids
+}
+
+main "$@"
