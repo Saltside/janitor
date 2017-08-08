@@ -1,0 +1,5 @@
+tasks:
+  - name: 'Stop sandboxes'
+    command: bin/stop-sandboxes
+    agents:
+      queue: 'elastic'

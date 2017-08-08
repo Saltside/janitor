@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+case "${JANITOR_TASK:-}" in
+	clean-sandboxes)
+		buildkite-agent pipeline upload .buildkite/stop-sandboxes.yml
+		;;
+	*)
+		echo "Don't know what to do!" 1>&2
+		return 1
+esac
