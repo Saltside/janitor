@@ -8,5 +8,5 @@ case "${JANITOR_TASK:-}" in
 		;;
 	*)
 		echo "Don't know what to do!" 1>&2
-		return 1
+		exit 1
 esac
