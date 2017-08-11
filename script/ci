@@ -3,7 +3,7 @@
 set -euo pipefail
 
 case "${JANITOR_TASK:-}" in
-	clean-sandboxes)
+	stop-sandboxes)
 		buildkite-agent pipeline upload .buildkite/stop-sandboxes.yml
 		;;
 	*)
